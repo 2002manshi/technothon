@@ -18,3 +18,13 @@ app.use("/applications", applicationRoutes);
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Technothon Backend is running 🚀",
+    endpoints: {
+      jobs: "/api/jobs",
+      apply: "/api/applications/apply"
+    }
+  });
+});
